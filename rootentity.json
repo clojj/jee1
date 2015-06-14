@@ -1,0 +1,16 @@
+  {
+    "field1": "val1000",
+    "field2": "val2000",
+    "childEntities": [
+      {
+        "field1": "child1",
+        "field2": "child2",
+        "mybytes": "YWJj"
+      },
+      {
+        "field1": "child1",
+        "field2": "child2",
+        "mybytes": "MTIzNDU="
+      }
+    ]
+  }
