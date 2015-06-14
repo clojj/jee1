@@ -34,8 +34,8 @@ public class MyRepository {
         return entityManager.createQuery("select r from RootEntity r", RootEntity.class).getResultList();
     }
 
-    public RootEntity find(long registrationId) {
-        return entityManager.createQuery("select r from RootEntity r", RootEntity.class).getSingleResult();
+    public RootEntity find(long id) {
+        return entityManager.createQuery("select r from RootEntity r where r.id = :eid", RootEntity.class).setParameter("eid", id).getSingleResult();
     }
 
     public void deleteById(long id) {

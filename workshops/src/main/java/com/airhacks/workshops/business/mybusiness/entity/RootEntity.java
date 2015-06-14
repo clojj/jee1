@@ -18,7 +18,7 @@ public class RootEntity {
     @SequenceGenerator(name = "root_entity_seq", sequenceName = "ROOT_ENTITY_ID_SEQ", allocationSize = 1)
     private long id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name="ROOT_ID", referencedColumnName="ID")
     private Set<ChildEntity> childEntities = new HashSet<ChildEntity>(0);
 
@@ -55,5 +55,14 @@ public class RootEntity {
 
     public void setField2(String field2) {
         this.field2 = field2;
+    }
+
+    @Override
+    public String toString() {
+        return "RootEntity{" +
+                "id=" + id +
+                ", field1='" + field1 + '\'' +
+                ", field2='" + field2 + '\'' +
+                '}';
     }
 }

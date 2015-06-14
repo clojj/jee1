@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Arrays;
 
 @Entity
 @XmlRootElement
@@ -52,5 +53,15 @@ public class ChildEntity {
 
     public void setMybytes(byte[] mybytes) {
         this.mybytes = mybytes;
+    }
+
+    @Override
+    public String toString() {
+        return "ChildEntity{" +
+                "id=" + id +
+                ", field1='" + field1 + '\'' +
+                ", field2='" + field2 + '\'' +
+                ", mybytes=" + Arrays.toString(mybytes) +
+                '}';
     }
 }
